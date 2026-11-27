@@ -5,7 +5,7 @@
 # ---- eksik paketleri otomatik kur ------------------------------------------------
 gerekli <- c("shiny", "bslib", "surveillance", "MASS", "ggplot2", "DT", "dplyr")
 eksik <- gerekli[!vapply(gerekli, requireNamespace, logical(1), quietly = TRUE)]
-if (length(eksik)) {
+if (length(eksik) && R.version$os != "emscripten") {   # tarayıcıda (Shinylive) kurulum yapılmaz
   message("Eksik paketler kuruluyor: ", paste(eksik, collapse = ", "))
   install.packages(eksik, repos = "https://cloud.r-project.org")
 }

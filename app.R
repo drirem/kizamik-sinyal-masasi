@@ -1,3 +1,4 @@
+library(lattice); library(Matrix); library(nlme)
 # Kızamık Sinyal Masası — Shiny sürümü
 # Gerekli paketler: install.packages(c("shiny", "bslib", "surveillance", "MASS", "ggplot2", "DT"))
 # Önce bir kez: source("hesapla.R")  → on_hesap.rds oluşur
@@ -16,8 +17,8 @@ KISA <- c("EARS-C1" = "C1", "EARS-C2" = "C2", "EARS-C3" = "C3", "Bayes" = "Bayes
           "Farrington" = "Farr.", "FarringtonFlexible" = "F.Flex", "GLR-NB" = "GLR-NB")
 RENK <- c(bar = "#6f8593", salgin = "#f3dcb4", kume = "#ddd8f2", dogru = "#c2253b", yanlis = "#d98a1c")
 
-tema <- bs_theme(version = 5, primary = "#0f6e78", base_font = font_google("Public Sans"),
-                 heading_font = font_google("Archivo"), code_font = font_google("IBM Plex Mono"))
+tema <- bs_theme(version = 5, primary = "#0f6e78", base_font = font_google("Public Sans", local = FALSE),
+                 heading_font = font_google("Archivo", local = FALSE), code_font = font_google("IBM Plex Mono", local = FALSE))
 
 durum_karti <- function(baslik, alt, sinyal, hafta) {
   div(class = "border rounded p-2", style = "min-width:150px;flex:1",
