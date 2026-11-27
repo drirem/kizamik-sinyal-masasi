@@ -28,7 +28,7 @@ durum_karti <- function(baslik, alt, sinyal, hafta) {
 }
 
 ui <- page_navbar(
-  title = "Kızamık Sinyal Masası", theme = tema, id = "sekme",
+  title = "Kızamık Sinyal Masası", theme = tema, id = "sekme", fillable = FALSE,
   header = div(class = "container-fluid text-muted small pt-2",
                "Yedi erken uyarı algoritmasını yan yana çalıştıran karar destek prototipi · araştırma prototipi, simüle veri"),
 
